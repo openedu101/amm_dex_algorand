@@ -1,0 +1,41 @@
+* AMM - Auto Market Maker
+- ETH <> ALGO
+- Contracts Pool
+- ETH/ALGO (Pool)
+  - 1 Eth -> 10 Algo -> 1 Eth <> 0.95 Algo
+  - 20 Algo -> 0.95 Eth
+  - input -> output
+
+- x_token * y_token = K (constants) -> constant product formular - CPF
+
+- x_token + x_new * y_token - y_new = K
+
+- 100 Eth * 1000 Algo = 100_000 (k)
+
+- 5 eth mua algo
+* CheckList function
+** DONE bootstrap -> contract với token ban đầu
+CLOSED: [2024-10-05 Sat 20:36]
+
+** DONE tokens_to_mint: tinh toan so luong token pool can add liquidity
+CLOSED: [2024-10-05 Sat 20:36]
+:PROPERTIES:
+:ACTIVATED: [2024-10-05]
+:END:
+x+x1 * y+y1 = K
+** DONE tokens_to_burn: tinh toan so luong token withdraw
+CLOSED: [2024-10-05 Sat 20:36]
+x-x1 * y-y1 = K
+** DONE tokens_to_swap: tinh toao so luong token swap
+CLOSED: [2024-10-05 Sat 20:36]
+x+x1 * y-y1 = K
+
+** DONE Custom Fees
+CLOSED: [2024-10-05 Sat 20:36]
+*** DONE Governance - Admin
+CLOSED: [2024-10-05 Sat 20:36]
+
+
+** TODO mint - add liquidity
+** TODO Burn - withdraw liquidity
+** TODO Swap - swap 2 tokens
