@@ -9,7 +9,6 @@ SCALE = 1000
 FEE = 5
 FACTOR = SCALE - FEE
 
-
 class ConstantProductAMM(ARC4Contract):
     def __init__(self) -> None:
         # init chạy bất cứ khi nào ID ứng dụng của giao dịch bằng không, và chạy đầu tiên
@@ -36,7 +35,7 @@ class ConstantProductAMM(ARC4Contract):
         """
         Hàm này thiết lập ban đầu cho hợp đồng bằng cách:
             1. Đăng ký (opt in) vào các tài sản
-            2. Tạo ra pool token
+            2. Tạo ra pool token - pool_token ->
 
         Lưu ý quan trọng:
             - Hàm này chỉ có thể chạy một lần duy nhất cho mỗi hợp đồng.
@@ -89,6 +88,8 @@ class ConstantProductAMM(ARC4Contract):
         2. Tạo ra một số lượng pool token tương ứng, dựa trên:
            - Số dư hiện tại của pool
            - Số lượng pool token đang lưu hành
+
+           x * y = K (constant products fomular)
 
         Các thông số đầu vào:
             a_xfer: Giao dịch chuyển khoản asset A vào pool.
@@ -417,8 +418,11 @@ def tokens_to_swap(*, in_amount: UInt64, in_supply: UInt64, out_supply: UInt64) 
         SCALE = 1_000
         FACTOR = 995 (phí 0.5%)
         in_amount = 100
-        in_supply = 1000
-        out_supply = 2000
+        in_supply = 1000 (ETH)
+        out_supply = 2000 (ALGO)
+        x * y = K
+        x * 2x = K
+        100 * 100*2 = K
         ---
         in_total = 1000 * (1000 - 100) + (100 * 995)
          = 1000 * 900 + 99500
